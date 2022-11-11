@@ -1,0 +1,147 @@
+.hero {
+    height: 500px;
+    width: 100%;
+    background-image:linear-gradient(rgb(0, 146, 162,.1),rgba(124, 116, 77, 0.4)), url(../images/hero.jpeg);
+    background-repeat: no-repeat;
+    background-position:center;
+    background-size: cover;
+    display: flex;
+    align-items: flex-end;
+    .calloutContainer {
+        height: 150px;
+        width: 1200px;
+        background-color: rgb(0, 0, 0,.70);
+        margin-bottom: 10px;
+        .callout {
+            color: white;
+            font-family: Inconsolata;
+            font-size: 70px;
+            margin-left: 90px;
+            margin-top: 10px;
+        }
+        .description {
+            color: white;
+            font-family: Inconsolata;
+            font-size: 20px;
+            margin-left: 100px;
+            margin-top: 10px;
+        }
+    }
+}
+
+// .gear-holder{
+//     height: 1700px;
+//     width: 100%;
+//     background-image:linear-gradient(rgba(124, 116, 77, 0.6),rgb(0, 146, 162,.2)), url(../images/store.jpeg);
+//     background-position: center;
+//     background-repeat: no-repeat;
+//     background-size: cover;
+//     // background-color: black;
+//     display: flex;
+//     flex-wrap: wrap;
+//     align-items: center;
+//     justify-content: center;
+//     cursor: pointer;
+//     .gearContainer{
+//         height: 300px;
+//         width: 500px;
+//         background-color:black;
+//         display: flex;
+//         align-items: center;
+//         justify-content: space-evenly;
+//         margin-left: 50px;
+//         border-radius: 15px;
+//         .browseContentContainer {
+//             height: 180px;
+//             width:200px;
+//             // background-color: antiquewhite;
+//             .title{
+//                 // background-color: brown;
+//                 height: 30px;
+//                 width: 200px;
+//                 color: white;
+//                 font-size: 20px;
+//                 font-family: Inconsolata;
+//             }
+//             .browseContent{
+//                 color: white;
+//                 font-size: 12px;
+//                 font-family: Inconsolata;
+//             }
+//             .price{
+//                 // background-color: brown;
+//                 height: 30px;
+//                 width: 200px;
+//                 color: white;
+//                 font-size: 20px;
+//                 font-family: Inconsolata;
+//                 margin-top: 10px;
+//             }
+//         }
+//     }
+// }
+
+// .gear{
+//     height: 1500px;
+//     width: 1200px;
+//     background-color:rgb(0, 0, 0,.8);
+//     // display: flex;
+//     // align-items: center;
+//     // justify-content: space-evenly;
+//     margin-left: 50px;
+//     border-radius: 15px;
+//     .browseImage{
+//         height: 700px;
+//         width:600px;
+//         // background-color: antiquewhite;
+//         margin: 0 auto;
+//         margin-top: 20px;
+//         img{
+//             height: 700px;
+//             width:600px; 
+//         }
+//     }
+//     .browseContentContainer {
+//         height: 500px;
+//         width:1000px;
+//         margin: 0 auto;
+//         // background-color: antiquewhite;
+//         .title{
+//             // background-color: brown;
+//             height: 100px;
+//             width: 100%;
+//             color: white;
+//             font-size: 50px;
+//             font-family: Inconsolata;
+//             margin-top: 70px;
+//         }
+//         .browseContent{
+//             color: white;
+//             font-size: 30px;
+//             font-family: Inconsolata;
+//         }
+//         .price{
+//             // background-color: brown;
+//             height: 40px;
+//             width: 100%;
+//             color: white;
+//             font-size: 40px;
+//             font-family: Inconsolata;
+//             margin-top: 50px;
+//         }
+//         .close{
+//             background-color:white;
+//             height: 35px;
+//             width: 140px;
+//             border-radius: 20px;
+//             // color: white;
+//             font-size: 30px;
+//             font-family: Inconsolata;
+//             margin-top: 50px;
+//             margin: 0 auto;
+//             text-align: center;
+//             cursor: pointer;
+//         }
+//     }
+// }
+
