@@ -30,6 +30,7 @@ function initListener(){
         $(".bars").toggleClass("active");
         $(".links").removeClass("active");
     });
+    
 }
 // var GEAR = [
 //     {gearTitle: "Palante Pack V2",
@@ -632,6 +633,12 @@ function loadLists(){
 }
 
 $(document).ready(function(){
-    initListener();
+    try{
+        let app = firebase.app();
+        initListener();
+    }catch(error){
+        console.log("error " + error);
+    }
+    
     // loadData();
 });
