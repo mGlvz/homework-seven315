@@ -575,6 +575,9 @@ var LISTS = [
     
 ]
 
+var userExists = false;
+var userFullName = "";
+
 function itemChecked(element,listIndex, itemIndex){
     $(element).parent().toggleClass("strike");
     let checkedValue = !LISTS[listIndex].items[itemIndex].checked;
@@ -631,10 +634,104 @@ function loadLists(){
     listString += `</ul>`;
     $("#app").html(listString);
 }
+function initFirebase (){
+    firebase.auth().onAuthStateChanged((user) => {
+        if(user){
+            console.log ("auth change logged in");
+            if(user.displayName){
+                $(".name").html(user.displayName);
+            }
+            
+            $(".loadLists").prop("disabled", false);
+            userExists = true;
+        }else{
+            console.log("auth changed logged out");
+            $(".name").html("");
+            $(".loadLists").prop("disabled", true);
+            userExists = false;
+            userFullName = "";
+
+        }
+    });
+}
+
+function signOut(){
+    firebase.auth().signOut()
+    .then(() => {
+      console.log("signed out");
+    })
+    .catch((error) => {
+      console.log("Error Signing out");
+    });
+
+}
+
+function login(){
+    let email = $("#log-email").val();
+    let pw = $("#log-pw").val();
+    firebase.auth().signInWithEmailAndPassword(email, pw)
+    .then((userCredential) => {
+      // Signed in
+      var user = userCredential.user;
+      console.log("logged in");
+      $("#log-email").val("");
+      $("#log-pw").val("");
+    })
+    .catch((error) => {
+      var errorCode = error.code;
+      var errorMessage = error.message;
+      console.log("logged in error" + errorMessage);
+    });
+  }
+
+function createAccount(){
+    let fName = $("#fName").val();
+    let lName = $("#lName").val();
+    let email = $("#email").val();
+    let pw = $("#pw").val();
+    let fullName = fName + " " + lName;
+
+    console.log("create " + fName + " " + lName + " " + email + " " + pw );
+    firebase.auth().createUserWithEmailAndPassword(email, pw)
+  .then((userCredential) => {
+    // Signed in 
+    var user = userCredential.user;
+    console.log('created');
+    firebase.auth().currentUser.updateProfile({
+        displayName: fullName,
+    });
+    userFullName = fullName;
+    $(".name").html(userFullName);
+    $("#fName").val("");
+    $("#lName").val("");
+    $("#email").val("");
+    $("#pw").val("");
+  })
+  .catch((error) => {
+    var errorCode = error.code;
+    var errorMessage = error.message;
+    console.log('create error ' + errorMessage);
+  });
+
+}
+
+function signIn(){
+    firebase.auth().signInAnonymously()
+    .then(() => {
+      console.log("signed in");
+    })
+    .catch((error) => {
+      var errorCode = error.code;
+      var errorMessage = error.message;
+      console.log("Error Signing in" + errorMessage);
+    });
+  }
 
 $(document).ready(function(){
     try{
         let app = firebase.app();
+        initFirebase();
+        // signInAnon();
         initListener();
     }catch(error){
         console.log("error " + error);

@@ -12,10 +12,11 @@
         <span>FOOD</span>
       </div>
       <div class="links">
-        <a href="index.html">HOME</a>
-        <a href="#about">ABOUT</a>
-        <a href="#products">PRODUCTS</a>
-        <a href="#login">LOGIN</a>
+        <!-- <a href="index.html">HOME</a> -->
+        <button class="loadLists" onclick="loadLists()">LOAD LIST</button>
+        <button class="signIn" onclick="signIn()">SIGN IN</button>
+        <button class="signOut" onclick="signOut()">SIGN OUT</button>
+        <div class="name"></div>
       </div>
       <div class="bars">
         <div class="bar"></div>
@@ -31,7 +32,28 @@
       </div>
     </div>
 
-    <button class="loadLists" onclick="loadLists()">LOAD LIST</button>
+    <div class="create-account">
+      <label for="fName">First Name:</label>
+      <input type="text" name="fName" id="fName" />
+      <label for="lName">Last Name:</label>
+      <input type="text" name="lName" id="lName" />
+      <label for="email">Email Address:</label>
+      <input type="email" name="email" id="email" />
+      <label for="password">Password:</label>
+      <input type="password" name="password" id="pw" />
+      <input
+        type="submit"
+        name="submit"
+        onclick="createAccount()"
+        value="Create Account"
+      />
+    </div>
+    <div class="login">
+      <input type="email" id="log-email" placeholder="Email Address:" />
+      <input type="password" id="log-pw" placeholder="Password:" />
+      <input type="submit" name="submit" onclick="login()" value="Log In" />
+    </div>
+
     <!-- <div class="gear-holder"> -->
     <div id="app"></div>
     <!-- </div> -->

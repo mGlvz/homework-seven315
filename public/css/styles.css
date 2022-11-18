@@ -24,15 +24,30 @@ h1, h2, h3, h4, h5, h6, p {
   background-size: cover;
 }
 
-.loadLists {
-  height: 50px;
+.create-account {
+  padding: 20px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
 }
 
-button {
-  width: 100%;
-  background-color: green;
-  color: white;
-  font-size: 30px;
+.login {
+  padding: 20px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+input {
+  margin-bottom: 10px;
 }
 
 ul {
@@ -116,7 +131,27 @@ nav {
   margin-left: 50px;
 }
 
-a {
+.links {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+.links button {
+  color: black;
+  text-decoration: none;
+  font-family: Inconsolata;
+  font-size: 25px;
+  margin-right: 50px;
+  padding-right: 40px;
+  width: 200px;
+}
+.links .name {
   color: white;
   text-decoration: none;
   font-family: Inconsolata;

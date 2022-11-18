@@ -20,15 +20,31 @@ h1, h2, h3, h4, h5, h6, p {
     background-size: cover;
 }
 
-.loadLists{
-    height: 50px;
+.create-account{
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
 }
-button{
-    width: 100%;
-    background-color: green;
-    color: white;
-    font-size: 30px;
+
+.login{
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
 }
+
+input{
+    margin-bottom: 10px;
+}
+
+// .loadLists{
+//     height: 50px;
+// }
+// button{
+//     width: 100%;
+//     background-color: green;
+//     color: white;
+//     font-size: 30px;
+// }
 
 ul{
     cursor: pointer;
